@@ -34,6 +34,18 @@ const init = async () => {
         }
     })
 
+
+    server.route({
+        method:'GET',
+        path: '/about',
+
+        handler:(request,h)=>{
+            return {
+                'msg': 'ini adalah halaman about'
+            }
+        }
+    })
+
     await server.start();
     console.log('Server running on %s', server.info.uri);
 };
